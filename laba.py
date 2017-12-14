@@ -59,6 +59,7 @@ car7 = Car(7, 'Audi', 40000, CarAttributes('Blue', 'Regular', 'Level-2'))
 car8 = Car(8, 'Audi', 45000, CarAttributes('Blue', 'Rain', 'Regular'))
 car9 = Car(9, 'Ford', 30000, CarAttributes('Violet', 'Sport', 'Level-1'))
 car10 = Car(10, 'Toyota', 32000. CarAttributes('Green', 'Show', 'Level-2'))
+car11 = Car(11, 'Ferrari', 200000, CarAttributes('Green', 'Sport', 'Level-1'))
 
 dealership1 = Dealership([car1, car2, car3], 'KMac')
 dealership2 = Dealership([car4, car5, car6, car7], 'JRM')
