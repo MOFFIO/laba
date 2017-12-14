@@ -38,7 +38,6 @@ class Dealership(object):
             if item.id == id:
                 return item
 
-
     def update_car(self, id, new_value):
         car = self.get_car(id)
         if car:
@@ -48,7 +47,6 @@ class Dealership(object):
                 setattr(car.attributes, new_value[0], new_value[1])
             return 'Car Updated'
         return 'Car not foundd'
-
 
 
 car1 = Car(1,'Ford', 23000, CarAttributes('Red', 'Rain', 'Level-1'))
