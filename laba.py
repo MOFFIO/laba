@@ -49,15 +49,15 @@ class Dealership(object):
         return 'Car not foundd'
 
 
-car1 = Car(1,'Ford', 23000, CarAttributes('Red', 'Rain', 'Level-1'))
-car2 = Car(2,'BMW', 46000, CarAttributes('Blue', 'Regular', 'Regular'))
-car3 = Car(3,'Ferrari', 150000, CarAttributes('Violet', 'Regular', 'Level-2'))
-car4 = Car(4,'Toyota', 26000, CarAttributes('Black', 'Snow', 'Regular'))
-car5 = Car(5,'BMW', 50000, CarAttributes('Red', 'Sport', 'Level-3'))
-car6 = Car(6,'Lotus', 50000, CarAttributes('Grey', 'Sport', 'Regular'))
-car7 = Car(7,'Audi', 40000, CarAttributes('Blue', 'Regular', 'Level-2'))
-car8 = Car(8,'Audi', 45000, CarAttributes('Blue', 'Rain', 'Regular'))
-car9 = Car(9,'Ford', 30000, CarAttributes('Violet', 'Sport', 'Level-1'))
+car1 = Car(1, 'Ford', 23000, CarAttributes('Red', 'Rain', 'Level-1'))
+car2 = Car(2, 'BMW', 46000, CarAttributes('Blue', 'Regular', 'Regular'))
+car3 = Car(3, 'Ferrari', 150000, CarAttributes('Violet', 'Regular', 'Level-2'))
+car4 = Car(4, 'Toyota', 26000, CarAttributes('Black', 'Snow', 'Regular'))
+car5 = Car(5, 'BMW', 50000, CarAttributes('Red', 'Sport', 'Level-3'))
+car6 = Car(6, 'Lotus', 50000, CarAttributes('Grey', 'Sport', 'Regular'))
+car7 = Car(7, 'Audi', 40000, CarAttributes('Blue', 'Regular', 'Level-2'))
+car8 = Car(8, 'Audi', 45000, CarAttributes('Blue', 'Rain', 'Regular'))
+car9 = Car(9, 'Ford', 30000, CarAttributes('Violet', 'Sport', 'Level-1'))
 
 dealership1 = Dealership([car1, car2, car3], 'KMac')
 dealership2 = Dealership([car4, car5, car6, car7], 'JRM')
@@ -65,12 +65,16 @@ dealership3 = Dealership([car8, car9], 'YPeng')
 
 
 p1List = [
-        [11, 'Mercedes', 40000, 'Grey', 'Snow', 'Regular'],
-        [12, 'Ford', 20000, 'Red', 'Rain', 'Level-1'],
-        ]
-p2List = [ ]
+    [11, 'Mercedes', 40000, 'Grey', 'Snow', 'Regular'],
+    [12, 'Ford', 20000, 'Red', 'Rain', 'Level-1'],
+]
+
+
+p2List = []
+
+
 p3List = [
-        [13, 'Mercedes', 40000, 'Grey', 'Snow', 'Regular'],
-        [14, 'Mercedes', 40000, 'Blue', 'Snow', 'Regular'],
-        [15, 'Mercedes', 40000, 'Orange', 'Snow', 'Regular'],
-        ]
+    [13, 'Mercedes', 40000, 'Grey', 'Snow', 'Regular'],
+    [14, 'Mercedes', 40000, 'Blue', 'Snow', 'Regular'],
+    [15, 'Mercedes', 40000, 'Orange', 'Snow', 'Regular'],
+]
