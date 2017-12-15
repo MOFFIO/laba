@@ -49,7 +49,11 @@ class Dealership(object):
         return 'Car not found'
 
     def sell_car(self, id):
-        pass
+        car = self.get_car(id)
+        if car:
+            self.car_list.remove(car)
+            return 'Car Sold'
+        return 'Car not found'
 
     def set_discount(self, id, discount_value):
         car = self.get_car(id)
