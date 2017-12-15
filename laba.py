@@ -46,8 +46,17 @@ class Dealership(object):
             elif new_value[0] in ('paint', 'tires', 'trim'):
                 setattr(car.attributes, new_value[0], new_value[1])
             return 'Car Updated'
-        return 'Car not foundd'
+        return 'Car not found'
 
+    def sell_car(self, id):
+        pass
+
+    def set_discount(self, id, discount_value):
+        car = self.get_car(id)
+        if car:
+            car.price = int(car.price * discount_value / 100)
+            return 'The Discount is set'
+        return 'Car not found'
 
 car1 = Car(1, 'Ford', 23000, CarAttributes('Red', 'Rain', 'Level-1'))
 car2 = Car(2, 'BMW', 46000, CarAttributes('Blue', 'Regular', 'Regular'))
@@ -58,7 +67,7 @@ car6 = Car(6, 'Lotus', 50000, CarAttributes('Grey', 'Sport', 'Regular'))
 car7 = Car(7, 'Audi', 40000, CarAttributes('Blue', 'Regular', 'Level-2'))
 car8 = Car(8, 'Audi', 45000, CarAttributes('Blue', 'Rain', 'Regular'))
 car9 = Car(9, 'Ford', 30000, CarAttributes('Violet', 'Sport', 'Level-1'))
-car10 = Car(10, 'Toyota', 32000. CarAttributes('Green', 'Show', 'Level-2'))
+car10 = Car(10, 'Toyota', 32000, CarAttributes('Green', 'Show', 'Level-2'))
 car11 = Car(11, 'Ferrari', 200000, CarAttributes('Green', 'Sport', 'Level-1'))
 car12 = Car(12, 'VAZ', 15000, CarAttributes('Blue', 'Rain', 'Level-2'))
 
