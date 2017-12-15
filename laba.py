@@ -71,6 +71,9 @@ class Dealership(object):
                 car_filter_list.append(carr)
             return car_filter_list
 
+    def car_amount(self):
+        return len(self.car_list)
+
 
 
 
