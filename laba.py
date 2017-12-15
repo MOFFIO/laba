@@ -62,6 +62,20 @@ class Dealership(object):
             return 'The Discount is set'
         return 'Car not found'
 
+    def car_filter(self, value):
+        car_filter_list = []
+        for carr in self.car_list:
+            if value[0] in ('brand', 'price') and value[1] == getattr(carr, value[0]):
+                car_filter_list.append(carr)
+            if value[0] in ('paint', 'tires', 'trim') and value[1] == getattr(carr.attributes, value[0]):
+                car_filter_list.append(carr)
+            return car_filter_list
+
+
+
+
+
+
 car1 = Car(1, 'Ford', 23000, CarAttributes('Red', 'Rain', 'Level-1'))
 car2 = Car(2, 'BMW', 46000, CarAttributes('Blue', 'Regular', 'Regular'))
 car3 = Car(3, 'Ferrari', 150000, CarAttributes('Violet', 'Regular', 'Level-2'))
