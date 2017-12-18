@@ -1,3 +1,8 @@
+#coding:utf-8
+
+from lxml import etree
+
+
 class Car(object):
 
     def __init__(self, id, brand, price, attributes):
@@ -74,6 +79,22 @@ class Dealership(object):
     def car_amount(self):
         return len(self.car_list)
 
+    def sync_xml_cars(self, file_adress='/home/moffio/my_python/cars.xml'):
+        tree = etree.parse(file_adress)
+        rawss = tree.findall('vehicle')
+        all_cars = []
+        for idd, raw in enumerate(rawss, start=1):
+            car = [
+                idd,
+                raw.get('make'),
+                int(raw.xpath('price')[0].text),
+                raw.xpath('color')[0].text,
+                raw.xpath('tires')[0].text,
+                'Regular'
+            ]
+            all_cars.append(car)
+        self.add_cars(all_cars)
+
 
 
 
@@ -111,3 +132,6 @@ p3List = [
     [14, 'Mercedes', 40000, 'Blue', 'Snow', 'Regular'],
     [15, 'Mercedes', 40000, 'Orange', 'Snow', 'Regular'],
 ]
+
+
+
