@@ -1,7 +1,7 @@
 #coding:utf-8
 
 from lxml import etree
-
+import json
 
 class Car(object):
 
@@ -14,6 +14,16 @@ class Car(object):
     def __repr__(self):
         return '<Car_id=%s_brand=%s>' % (self.id, self.brand)
 
+    def car_as_dict(self):
+        car = {
+                'id' : self.id,
+                'brand' : self.brand,
+                'price' : self.price,
+                'paint' : self.attributes.paint,
+                'tires' : self.attributes.tires,
+                'trim' : self.attributes.trim
+                }
+        return car
 
 class CarAttributes(object):
 
@@ -103,16 +113,8 @@ class Dealership(object):
     def car_list_to_json(self):
         json_cars = []
         for car in self.car_list:
-            car = {
-                'id' : car.id,
-                'brand' : car.brand,
-                'price' : car.price,
-                'paint' : car.attributes.paint,
-                'tires' : car.attributes.tires,
-                'trim' : car.attributes.trim
-                }
-            json_cars.append(car)
-        return json_cars
+            json_cars.append(car.car_as_dict())
+        return json.dumps(json_cars, indent = 4, ensure_ascii=False)
 
 
 
