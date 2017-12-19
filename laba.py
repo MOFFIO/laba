@@ -67,14 +67,19 @@ class Dealership(object):
             return 'The Discount is set'
         return 'Car not found'
 
-    def car_filter(self, value):
+    def car_filter(self, values):
         car_filter_list = []
-        for carr in self.car_list:
-            if value[0] in ('brand', 'price') and value[1] == getattr(carr, value[0]):
-                car_filter_list.append(carr)
-            if value[0] in ('paint', 'tires', 'trim') and value[1] == getattr(carr.attributes, value[0]):
-                car_filter_list.append(carr)
-            return car_filter_list
+        car_list = self.car_list
+        for value in values:
+            for carr in car_list:
+                if value[0] in ('brand', 'price') and value[1] == getattr(carr, value[0]):
+                    car_filter_list.append(carr)
+                if value[0] in ('paint', 'tires', 'trim') and value[1] == getattr(carr.attributes, value[0]):
+                    car_filter_list.append(carr)
+            car_list = car_filter_list[:]
+            car_filter_list = []
+        return car_list
+
 
     def car_amount(self):
         return len(self.car_list)
@@ -94,6 +99,20 @@ class Dealership(object):
             ]
             all_cars.append(car)
         self.add_cars(all_cars)
+
+    def car_list_to_json(self):
+        json_cars = []
+        for car in self.car_list:
+            car = {
+                'id' : car.id,
+                'brand' : car.brand,
+                'price' : car.price,
+                'paint' : car.attributes.paint,
+                'tires' : car.attributes.tires,
+                'trim' : car.attributes.trim
+                }
+            json_cars.append(car)
+        return json_cars
 
 
 
